@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:practice3/loginpage.dart';
+import 'package:practice3/signuppage.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const MyHomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -36,11 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       Padding(
                         padding: EdgeInsets.only(top: 40.0),
                         child: Text(
-                          'Healthify.',
+                          'healthify.',
                           style: TextStyle(
-                            fontSize: 30,
+                            fontSize: 35,
                             fontWeight: FontWeight.bold,
-                            color: Colors.green,
+                            color: Colors.greenAccent.shade700,
                           ),
                         ),
                       ),
@@ -60,9 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       SizedBox(
-                        height: 40,
+                        height: 50,
                       ),
-                      TextButton(
+                      OutlinedButton(
                         child: Container(
                             width: 300,
                             decoration: BoxDecoration(
@@ -79,12 +81,18 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontSize: 20,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MyloginPage()),
+                          );
+                        },
                       ),
                       SizedBox(
                         height: 10,
                       ),
-                      TextButton(
+                      OutlinedButton(
                         child: Container(
                             width: 300,
                             decoration: BoxDecoration(
@@ -94,14 +102,20 @@ class _MyHomePageState extends State<MyHomePage> {
                               textAlign: TextAlign.center,
                             )),
                         style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(16.0),
+                          padding: EdgeInsets.all(8.0),
                           backgroundColor: Colors.transparent,
                           primary: Colors.green,
                           textStyle: TextStyle(
                             fontSize: 20,
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const MySignupPage()),
+                          );
+                        },
                       ),
                     ],
                   ),

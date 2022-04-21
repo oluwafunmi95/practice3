@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyloginPage extends StatefulWidget {
-  const MyloginPage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const MyloginPage({Key? key}) : super(key: key);
 
   @override
   State<MyloginPage> createState() => _MyloginPageState();
@@ -20,88 +18,105 @@ class _MyloginPageState extends State<MyloginPage> {
         child: SafeArea(
           child: Container(
             color: Colors.green,
-            child: Column(
-              children: [
-                Container(
-                  color: Colors.white,
-                  height: MediaQuery.of(context).size.height,
-                  width: MediaQuery.of(context).size.width,
-                  child: Column(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 40.0),
-                        child: Text(
-                          'Healthify.',
-                          style: TextStyle(
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.green,
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: 60.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                'healthify.',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.greenAccent.shade700,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 20.0),
-                        child: Container(
-                          width: 200,
-                          child: Text(
-                            'Welcome Back!',
-                            textAlign: TextAlign.center,
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(top: 20.0),
+                              child: Container(
+                                child: Text(
+                                  'Welcome Back!',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.normal,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        TextField(
+                          decoration: InputDecoration(
+                            border: UnderlineInputBorder(),
+                            hintText: 'Email',
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        TextField(
+                          style: TextStyle(color: Colors.white),
+                          decoration: InputDecoration(
+                            iconColor: Colors.white,
+                            border: UnderlineInputBorder(),
+                            hintText: 'Password',
+                          ),
+                        ),
+                        Text(
+                            "Forgot password?",
+                            textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 10,
                               fontWeight: FontWeight.normal,
-                              color: Colors.black,
+                              color: Colors.white,
                             ),
                           ),
+                        SizedBox(
+                          height: 250,
                         ),
-                      ),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      TextButton(
-                        child: Container(
-                            width: 300,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(80)),
-                            child: Text(
-                              'Login',
-                              textAlign: TextAlign.center,
-                            )),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(8.0),
-                          backgroundColor: Colors.green,
-                          primary: Colors.white,
-                          textStyle: TextStyle(
-                            fontSize: 20,
+                        OutlinedButton(
+                          child: Container(
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(80)),
+                              child: Text(
+                                'Login',
+                                textAlign: TextAlign.center,
+                              )),
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.all(8.0),
+                            backgroundColor: Colors.greenAccent.shade700,
+                            primary: Colors.white,
+                            textStyle: TextStyle(
+                              fontSize: 20,
+                            ),
                           ),
+                          onPressed: () {},
                         ),
-                        onPressed: () {},
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      TextButton(
-                        child: Container(
-                            width: 300,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(80)),
-                            child: Text(
-                              'Sign up',
-                              textAlign: TextAlign.center,
-                            )),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(16.0),
-                          backgroundColor: Colors.transparent,
-                          primary: Colors.green,
-                          textStyle: TextStyle(
-                            fontSize: 20,
-                          ),
-                        ),
-                        onPressed: () {},
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
